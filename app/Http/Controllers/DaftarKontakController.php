@@ -76,7 +76,6 @@ class DaftarKontakController extends Controller
         $daftarkontaks = DaftarKontakModel::when($request->keyword, function ($query) use ($request) {
         $query->where('nama', 'like', "%".$request->keyword."%");
         })->get();
-        //$daftarkontaks = DaftarKontakModel::where('nama', 'like', "%".$request->keyword."%" )->get();
         return view('daftarkontak.index', ['daftarkontaks' => $daftarkontaks]);
     }
 
